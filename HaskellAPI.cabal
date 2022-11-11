@@ -35,5 +35,7 @@ executable HaskellAPI
                     , text
                     , aeson
                     , mtl
+                    , lucid
+                    , Spock-lucid
     hs-source-dirs:   app
     default-language: Haskell2010

@@ -20,6 +20,16 @@
   (major1) == 0 && (major2) <  14 || \
   (major1) == 0 && (major2) == 14 && (minor) <= 0)
 #endif /* MIN_VERSION_Spock */
+/* package Spock-lucid-0.4.0.1 */
+#ifndef VERSION_Spock_lucid
+#define VERSION_Spock_lucid "0.4.0.1"
+#endif /* VERSION_Spock_lucid */
+#ifndef MIN_VERSION_Spock_lucid
+#define MIN_VERSION_Spock_lucid(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  4 || \
+  (major1) == 0 && (major2) == 4 && (minor) <= 0)
+#endif /* MIN_VERSION_Spock_lucid */
 /* package aeson-2.1.1.0 */
 #ifndef VERSION_aeson
 #define VERSION_aeson "2.1.1.0"
@@ -50,6 +60,16 @@
   (major1) == 0 && (major2) <  12 || \
   (major1) == 0 && (major2) == 12 && (minor) <= 3)
 #endif /* MIN_VERSION_http_types */
+/* package lucid-2.11.1 */
+#ifndef VERSION_lucid
+#define VERSION_lucid "2.11.1"
+#endif /* VERSION_lucid */
+#ifndef MIN_VERSION_lucid
+#define MIN_VERSION_lucid(major1,major2,minor) (\
+  (major1) <  2 || \
+  (major1) == 2 && (major2) <  11 || \
+  (major1) == 2 && (major2) == 11 && (minor) <= 1)
+#endif /* MIN_VERSION_lucid */
 /* package mtl-2.2.2 */
 #ifndef VERSION_mtl
 #define VERSION_mtl "2.2.2"
@@ -131,15 +151,15 @@
   (major1) == 0 && (major2) <  68 || \
   (major1) == 0 && (major2) == 68 && (minor) <= 7)
 #endif /* MIN_TOOL_VERSION_hsc2hs */
-/* tool pkg-config-0.28 */
+/* tool pkg-config-0.29.2 */
 #ifndef TOOL_VERSION_pkg_config
-#define TOOL_VERSION_pkg_config "0.28"
+#define TOOL_VERSION_pkg_config "0.29.2"
 #endif /* TOOL_VERSION_pkg_config */
 #ifndef MIN_TOOL_VERSION_pkg_config
 #define MIN_TOOL_VERSION_pkg_config(major1,major2,minor) (\
   (major1) <  0 || \
-  (major1) == 0 && (major2) <  28 || \
-  (major1) == 0 && (major2) == 28 && (minor) <= 0)
+  (major1) == 0 && (major2) <  29 || \
+  (major1) == 0 && (major2) == 29 && (minor) <= 2)
 #endif /* MIN_TOOL_VERSION_pkg_config */
 /* tool runghc-8.10.7 */
 #ifndef TOOL_VERSION_runghc

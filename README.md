@@ -8,7 +8,7 @@ I will add instruction for that later.
 
 Minimal working example
 
-```
+```haskell 
 module Main where
 
 import Web.Spock
@@ -29,7 +29,7 @@ When ran with `cabal run HaskellAPI` you will get a 404 on https://localhost:808
 
 Here is the next logical step. Now we are serving the string `"Hello"` in the route '/'
 
-```
+```haskell
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 

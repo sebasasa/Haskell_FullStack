@@ -1,5 +1,6 @@
 {-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ExtendedDefaultRules #-}
 
 module Main where
 import Web.Spock
@@ -8,9 +9,15 @@ import Data.Aeson        hiding (json)
 import Data.Monoid       ((<>))
 import Data.Text         (Text, pack)
 import GHC.Generics
+import Web.Spock.Lucid (lucid)
+import Lucid
 
--- Here we are defining a datatype that
--- can be converted to JSON using aeson
+
+-- Views
+import Views.Hello
+import Views.Goodbye
+
+--  Model
 
 data Person = Person
   { name :: Text
@@ -19,17 +26,26 @@ data Person = Person
 instance ToJSON Person
 instance FromJSON Person
 
--- Here we defien out routes
+
+-- Controler/Router
 
 type Api = SpockM () () () ()
 type ApiAction a = SpockAction () () () a
 app :: Api 
 app = do
-    get root (text "<html><h1>Hello!</h1><a href='/other'>other</a></html>")
-    get "/other" (text "<h1>Goodbye!</h1><a href='/'>root</a>")
-    get "/json" (json $ Person { name = "Fry", age = 25 })
 
--- Here we serve teh aplication
+    get (root) $ 
+        lucid hello_
+    
+    get ("other") $ 
+        lucid goodbye_
+    
+    get ("api/person" <//> var)  $ 
+        \name -> json Person{name = name, age = 10}
+
+
+
+-- Serve
 
 main :: IO ()
 main = do
